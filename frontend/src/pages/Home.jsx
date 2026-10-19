@@ -193,21 +193,21 @@ export default function Home({ onOpenResume }) {
                 {!videoError && (
                   <video
                     ref={videoRef}
-                    poster="/assets/veeresh_portrait.jpg"
+                    poster="/images/veeresh_portrait.jpg"
                     playsInline
                     muted
                     loop
                     onError={() => setVideoError(true)}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   >
-                    <source src="/assets/intro_avatar.mp4" type="video/mp4" />
+                    <source src="/videos/intro_avatar.mp4" type="video/mp4" />
                   </video>
                 )}
 
                 {/* Portrait Display (Acts as poster or primary visual) */}
                 {videoError && (
                   <img
-                    src="/assets/veeresh_portrait.jpg"
+                    src="/images/veeresh_portrait.jpg"
                     alt="Veeresh Gollapu — Software Developer"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

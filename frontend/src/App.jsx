@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import MainLayout from "./layouts/MainLayout";
 import CinematicIntro from "./components/CinematicIntro";
 import ResumeModal from "./components/ResumeModal";
 
@@ -54,33 +53,27 @@ export default function App() {
         />
       )}
 
-      {/* Application Layout */}
-      <div className="flex flex-col min-h-screen bg-[#080D16] text-[#F8FAFC] selection:bg-[#FF5A1F] selection:text-white font-inter">
-        {/* Navigation */}
-        <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+      {/* Structured Application Layout */}
+      <MainLayout
+        onOpenResume={() => setIsResumeOpen(true)}
+        onReplayIntro={handleReplayIntro}
+      >
+        <Routes>
+          <Route path="/" element={<Home onOpenResume={() => setIsResumeOpen(true)} />} />
+          <Route path="/about" element={<About onOpenResume={() => setIsResumeOpen(true)} />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience onOpenResume={() => setIsResumeOpen(true)} />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home onOpenResume={() => setIsResumeOpen(true)} />} />
+        </Routes>
+      </MainLayout>
 
-        {/* Main Content Area with Routes */}
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home onOpenResume={() => setIsResumeOpen(true)} />} />
-            <Route path="/about" element={<About onOpenResume={() => setIsResumeOpen(true)} />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/experience" element={<Experience onOpenResume={() => setIsResumeOpen(true)} />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home onOpenResume={() => setIsResumeOpen(true)} />} />
-          </Routes>
-        </main>
-
-        {/* Global Footer */}
-        <Footer onReplayIntro={handleReplayIntro} />
-
-        {/* Factual Resume Preview Modal */}
-        <ResumeModal
-          isOpen={isResumeOpen}
-          onClose={() => setIsResumeOpen(false)}
-        />
-      </div>
+      {/* Factual Resume Preview Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </Router>
   );
 }

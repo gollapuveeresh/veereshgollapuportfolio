@@ -37,7 +37,7 @@ export default function About({ onOpenResume }) {
               <div className="relative rounded-3xl p-1 bg-gradient-to-b from-[#26364A] via-[#111D2D] to-[#FF5A1F]/40 shadow-2xl">
                 <div className="relative rounded-[22px] overflow-hidden bg-[#080D16] aspect-[4/5]">
                   <img
-                    src="/assets/veeresh_portrait.jpg"
+                    src="/images/veeresh_portrait.jpg"
                     alt="Veeresh Gollapu Portrait"
                     className="w-full h-full object-cover"
                   />
