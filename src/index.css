@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #080D16;
+  --color-bg-secondary: #111D2D;
+  --color-orange-primary: #FF5A1F;
+  --color-orange-secondary: #FF7A36;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #A5AFBD;
+  --color-border-dark: #26364A;
+
+  --font-anton: 'Anton', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+}
+
+:root {
+  --bg-primary: #080D16;
+  --bg-secondary: #111D2D;
+  --orange-primary: #FF5A1F;
+  --orange-secondary: #FF7A36;
+  --text-primary: #F8FAFC;
+  --text-secondary: #A5AFBD;
+  --border-dark: #26364A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #080D16;
+  color: #F8FAFC;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080D16;
+  color: #F8FAFC;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utility Classes */
+.font-anton {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080D16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26364A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5A1F;
+}
+
+/* Noise overlay utility */
+.noise-bg {
+  background-image: radial-gradient(rgba(255, 90, 31, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glow gradient accents */
+.orange-glow {
+  box-shadow: 0 0 35px -5px rgba(255, 90, 31, 0.35);
+}
+
+.orange-glow-sm {
+  box-shadow: 0 0 20px -3px rgba(255, 90, 31, 0.25);
+}
+
+.subtle-border {
+  border-color: #26364A;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF5A1F 0%, #FF7A36 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-gradient {
+  background: linear-gradient(180deg, rgba(17, 29, 45, 0.85) 0%, rgba(8, 13, 22, 0.95) 100%);
+  backdrop-filter: blur(12px);
+}
+
+/* Film grain / subtle scanline texture */
+.cinematic-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(38, 54, 74, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(38, 54, 74, 0.25) 1px, transparent 1px);
+}
